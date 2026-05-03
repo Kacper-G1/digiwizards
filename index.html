@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak chronić się przed manipulacją | Świadomość i Obrona</title>
+    <meta name="description" content="Poznaj techniki manipulacji i dowiedz się, jak skutecznie się przed nimi bronić. Edukacyjna strona o krytycznym myśleniu.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #475569;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 99px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at top right, #e0e7ff 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, #f5f3ff 0%, transparent 40%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            background: linear-gradient(to bottom right, #1e293b, #475569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Definition Section */
+        .definition {
+            background-color: var(--bg-alt);
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .comp-card {
+            padding: 32px;
+            border-radius: var(--radius);
+            background: white;
+            box-shadow: var(--shadow);
+            border-left: 4px solid #cbd5e1;
+        }
+
+        .comp-card.manipulative {
+            border-left-color: #ef4444;
+        }
+
+        .comp-card.neutral {
+            border-left-color: #10b981;
+        }
+
+        .label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Techniques Grid */
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        .card {
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #eef2ff;
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .card-example {
+            margin-top: auto;
+            padding-top: 20px;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            border-top: 1px solid #f1f5f9;
+        }
+
+        /* Protection List */
+        .protection {
+            background-color: var(--text);
+            color: white;
+        }
+
+        .protection h2 {
+            color: white;
+        }
+
+        .protection p {
+            color: #94a3b8;
+        }
+
+        .protection-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .prot-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .prot-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+        }
+
+        .prot-icon {
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        /* Test Section */
+        .test-box {
+            max-width: 700px;
+            margin: 50px auto 0;
+            background: white;
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .test-question {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        .test-options {
+            display: grid;
+            gap: 16px;
+        }
+
+        .option-btn {
+            padding: 16px;
+            background: var(--bg-alt);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary);
+            background: #eef2ff;
+        }
+
+        .test-feedback {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 12px;
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .feedback-bad {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            text-align: center;
+            background: linear-gradient(to right, #4f46e5, #818cf8);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .conclusion h2 {
+            margin-bottom: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .hero {
+                min-height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container fade-in">
+            <div class="hero-content">
+                <h1>Czy wiesz, jak łatwo można Cię zmanipulować?</h1>
+                <p>Każdego dnia jesteśmy bombardowani tysiącami komunikatów. Poznaj techniki manipulacji i naucz się przed nimi bronić, aby odzyskać kontrolę nad własnymi decyzjami.</p>
+                <div style="margin-top: 32px;">
+                    <a href="#czym-jest" class="btn">Dowiedz się więcej</a>
+                    <a href="#test" class="btn btn-outline" style="margin-left: 12px;">Sprawdź się</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Definition Section -->
+    <section id="czym-jest" class="definition">
+        <div class="container">
+            <div class="fade-in" style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="label" style="color: var(--primary);">Podstawy</span>
+                <h2>Czym jest manipulacja?</h2>
+                <p>To celowe działanie, którego celem jest zmiana zachowania lub przekonań innej osoby w sposób ukryty i często szkodliwy. Manipulator nie gra w otwarte karty – używa trików, byś myślał, że to Twoja własna decyzja.</p>
+            </div>
+
+            <div class="comparison fade-in">
+                <div class="comp-card manipulative">
+                    <span class="label" style="color: #ef4444;">Przekaz manipulacyjny</span>
+                    <p>"Tylko dzisiaj! Ostatnie sztuki! Jeśli nie kupisz teraz, stracisz jedyną szansę w życiu!"</p>
+                </div>
+                <div class="comp-card neutral">
+                    <span class="label" style="color: #10b981;">Przekaz neutralny</span>
+                    <p>"Nasz produkt jest dostępny w promocji do końca dnia. Zapraszamy do zapoznania się z ofertą."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Techniques Section -->
+    <section id="techniki">
+        <div class="container">
+            <div class="fade-in" style="text-align: center; margin-bottom: 50px;">
+                <span class="label" style="color: var(--primary);">Arsenal manipulatora</span>
+                <h2>Mocne techniki i przykłady</h2>
+                <p>Dzisiejsza manipulacja jest subtelna, szybka i wykorzystuje nasze najgłębsze instynkty.</p>
+            </div>
+
+            <div class="techniques-grid">
+                <!-- Card 1 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="users"></i></div>
+                    <h3>Dowód społeczny (Social Proof)</h3>
+                    <p>Sugestia, że jesteś w mniejszości, która "nie rozumie" lub "zostaje w tyle". To uderza w pierwotny lęk przed wykluczeniem ze stada.</p>
+                    <div class="card-example">
+                        "Ponad 2 miliony Polaków już zabezpieczyło swoje oszczędności przed krachem. Nie pozwól, by Twoja rodzina była jedyną, która straci wszystko."
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>Fałszywy Autorytet</h3>
+                    <p>Wykorzystanie tytułów naukowych lub "oficjalnych raportów" (często zmyślonych), by uśpić Twoją czujność i krytycyzm.</p>
+                    <div class="card-example">
+                        "Zgodnie z tajnym raportem 'Global Finance Security', obecny system bankowy przestanie istnieć w ciągu 6 miesięcy. Eksperci zalecają natychmiastowe przejście na krypto-aktywa."
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="flame"></i></div>
+                    <h3>Zarządzanie Strachem</h3>
+                    <p>Wprowadzanie w stan "walki lub ucieczki". Gdy się boisz, Twój mózg przestaje analizować fakty, a szuka tylko ratunku.</p>
+                    <div class="card-example">
+                        "Twoje dane biometryczne wyciekły do ciemnej sieci. Masz 15 minut na zmianę hasła przez ten link, zanim hakerzy przejmą Twoją tożsamość."
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="megaphone"></i></div>
+                    <h3>Polaryzacja i Emocje</h3>
+                    <p>Dzielenie świata na "my" i "oni". Manipulator chce, byś czuł nienawiść lub pogardę do drugiej strony, bo wtedy łatwiej Tobą sterować.</p>
+                    <div class="card-example">
+                        "ONI chcą zniszczyć Twoją wolność i zabrać Ci wszystko, na co pracowałeś. Tylko MY mamy odwagę powiedzieć DOŚĆ. Jesteś z nami czy przeciwko nam?"
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="eye-off"></i></div>
+                    <h3>Półprawdy i Kontekst</h3>
+                    <p>Prezentowanie prawdziwych faktów w taki sposób, by prowadziły do fałszywych wniosków. Ukrywanie kosztów i skutków ubocznych.</p>
+                    <div class="card-example">
+                        "Nasza aplikacja jest w 100% darmowa i chroni Twoją prywatność! (W regulaminie na 40. stronie: 'Zgadzasz się na śledzenie lokalizacji i sprzedaż historii przeglądania podmiotom trzecim')."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curiosities Section -->
+    <section class="definition" style="background-color: #f1f5f9;">
+        <div class="container">
+            <div class="fade-in" style="text-align: center; margin-bottom: 50px;">
+                <span class="label" style="color: var(--primary);">Czy wiesz, że...?</span>
+                <h2>Fakty, które zmieniają perspektywę</h2>
+            </div>
+            
+            <div class="protection-list" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                <div class="card fade-in" style="background: white; border-radius: 24px; padding: 30px;">
+                    <h3 style="color: var(--primary);">Zasada 3 sekund</h3>
+                    <p>Manipulatorzy często starają się wymusić decyzję w ciągu pierwszych kilku sekund. Dlaczego? Ponieważ tyle czasu potrzebuje kora przedczołowa, by zacząć logicznie analizować sytuację.</p>
+                </div>
+                <div class="card fade-in" style="background: white; border-radius: 24px; padding: 30px;">
+                    <h3 style="color: var(--primary);">Efekt czystej ekspozycji</h3>
+                    <p>Mózg podświadomie ufa rzeczom, które widzi często. Nawet jeśli na początku coś Ci się nie podobało, po 20-tym wyświetleniu reklamy zaczniesz uznawać ten produkt za "bezpieczny wybór".</p>
+                </div>
+                <div class="card fade-in" style="background: white; border-radius: 24px; padding: 30px;">
+                    <h3 style="color: var(--primary);">Gaslighting 2.0</h3>
+                    <p>W 2026 roku najgroźniejszą formą manipulacji jest podważanie faktów przy pomocy AI. Gdy nie wiesz już, co jest prawdą, a co deepfakiem, stajesz się najbardziej podatny na sugestie "silnych liderów".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Protection Section -->
+    <section id="ochrona" class="protection">
+        <div class="container">
+            <div class="fade-in" style="text-align: center; margin-bottom: 50px;">
+                <span class="label" style="color: var(--primary);">Twoja tarcza</span>
+                <h2>Jak się bronić w 2026?</h2>
+                <p>Technologia idzie naprzód, ale mechanizmy psychologiczne pozostają te same.</p>
+            </div>
+
+            <div class="protection-list">
+                <div class="prot-item fade-in">
+                    <i data-lucide="brain" class="prot-icon"></i>
+                    <h3>Włącz "opóźnienie"</h3>
+                    <p>Nigdy nie podejmuj decyzji pod wpływem emocji. Daj sobie 10 minut – to wystarczy, by opadła adrenalina.</p>
+                </div>
+                <div class="prot-item fade-in">
+                    <i data-lucide="search" class="prot-icon"></i>
+                    <h3>Weryfikuj źródła AI</h3>
+                    <p>W świecie deepfake'ów sprawdzaj, czy dana osoba rzeczywiście to powiedziała w innych, niezależnych mediach.</p>
+                </div>
+                <div class="prot-item fade-in">
+                    <i data-lucide="eye-off" class="prot-icon"></i>
+                    <h3>Szukaj interesu</h3>
+                    <p>Zadaj pytanie: "Kto zarabia na tym, że ja się teraz tak czuję?"</p>
+                </div>
+                <div class="prot-item fade-in">
+                    <i data-lucide="activity" class="prot-icon"></i>
+                    <h3>Higiena cyfrowa</h3>
+                    <p>Ogranicz algorytmy, które serwują Ci tylko to, co już lubisz. Szukaj opinii, z którymi się nie zgadzasz.</p>
+                </div>
+                <div class="prot-item fade-in">
+                    <i data-lucide="layers" class="prot-icon"></i>
+                    <h3>Odporność na bańki</h3>
+                    <p>Zauważaj, kiedy portal próbuje Cię przestraszyć "tymi drugimi". To zawsze jest czerwona flaga.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Section -->
+    <section id="test" class="definition">
+        <div class="container">
+            <div class="fade-in" style="text-align: center;">
+                <span class="label" style="color: var(--primary);">Interakcja</span>
+                <h2>Test odporności na 2026 rok</h2>
+                <p>Jak zareagujesz na te komunikaty?</p>
+            </div>
+
+            <div class="test-box fade-in">
+                <div id="q1">
+                    <p class="test-question">"Twoje konto oszczędnościowe zostało zamrożone z powodu podejrzanej aktywności. Kliknij [TUTAJ], aby odblokować środki w ciągu 5 minut, inaczej zostaną trwale zablokowane."</p>
+                    <div class="test-options">
+                        <button class="option-btn" onclick="showFeedback('q1', true)">Klikam szybko, by nie stracić pieniędzy</button>
+                        <button class="option-btn" onclick="showFeedback('q1', true)">Zamykam okno i dzwonię na oficjalną infolinię banku</button>
+                    </div>
+                    <div id="feedback-q1" class="test-feedback feedback-bad">
+                        <strong>To klasyczna manipulacja strachem i presją czasu!</strong><br>
+                        Manipulator chce, byś działał w stresie. Żaden bank nie wymusza tak gwałtownych ruchów przez linki w SMS/emailu.
+                    </div>
+                </div>
+
+                <div id="q2" style="display: none; margin-top: 40px;">
+                    <p class="test-question">"Jako jedyny w swojej grupie znajomych jeszcze nie używasz NeuralLink-Lite. Czy naprawdę chcesz być tym zacofanym, który nie nadąża za postępem?"</p>
+                    <div class="test-options">
+                        <button class="option-btn" onclick="showFeedback('q2', true)">Kupuję, by nie odstawać od reszty</button>
+                        <button class="option-btn" onclick="showFeedback('q2', true)">Zastanawiam się, czy to mi w ogóle potrzebne</button>
+                    </div>
+                    <div id="feedback-q2" class="test-feedback feedback-bad">
+                        <strong>To manipulacja przez dowód społeczny i poczucie wstydu!</strong><br>
+                        Sugestia, że "wszyscy inni" coś robią, ma na celu złamanie Twojego indywidualnego oporu.
+                    </div>
+                </div>
+                
+                <button id="next-q" class="btn" style="margin-top: 32px; display: none;" onclick="nextQuestion()">Następne wyzwanie</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <div class="container fade-in">
+            <h2>Prawda jest Twoim wyborem</h2>
+            <p style="color: white; font-size: 1.5rem; font-weight: 500; max-width: 700px; margin: 0 auto;">
+                "W 2026 roku uwaga jest najcenniejszą walutą. Nie oddawaj jej nikomu za darmo – a już na pewno nie manipulatorom."
+            </p>
+            <p style="margin-top: 24px; opacity: 0.9;">Bądź strażnikiem własnego umysłu.</p>
+        </div>
+    </section>
+
+    <footer style="padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.875rem;">
+        <p>&copy; 2026 Świadomość i Obrona. Edukacyjny projekt o manipulacji cyfrowej.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Test logic
+        function showFeedback(id, isManipulative) {
+            const feedback = document.getElementById(`feedback-${id}`);
+            feedback.style.display = 'block';
+            
+            // Disable buttons
+            const buttons = document.querySelectorAll(`#${id} .option-btn`);
+            buttons.forEach(btn => btn.style.pointerEvents = 'none');
+
+            if (id === 'q1') {
+                document.getElementById('next-q').style.display = 'inline-flex';
+            }
+        }
+
+        function nextQuestion() {
+            document.getElementById('q1').style.display = 'none';
+            document.getElementById('next-q').style.display = 'none';
+            const q2 = document.getElementById('q2');
+            q2.style.display = 'block';
+            q2.classList.add('fade-in', 'visible');
+        }
+    </script>
+</body>
+</html>

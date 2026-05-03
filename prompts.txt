@@ -1,0 +1,59 @@
+Stwórz nowoczesną, responsywną stronę internetową w HTML, CSS i JavaScript na temat:
+
+„Jak chronić się przed manipulacją”
+
+Strona ma wyglądać profesjonalnie i nowocześnie (jak strona startupu), z jasnym tłem, dużymi nagłówkami, kartami (cards), animacjami fade-in przy scrollowaniu i przyjaznym UI.
+
+Struktura strony:
+
+1. Sekcja startowa (hero):
+- Duży nagłówek: „Czy wiesz, jak łatwo można Cię zmanipulować?”
+- Podtytuł: „Poznaj techniki manipulacji i naucz się przed nimi bronić”
+- Przycisk: „Dowiedz się więcej”
+
+2. Sekcja: Czym jest manipulacja?
+- Krótkie wyjaśnienie (2–3 zdania)
+- Prosty przykład manipulacyjnego zdania vs neutralnego
+
+3. Sekcja: Najczęstsze techniki manipulacji (w formie kart)
+Każda karta zawiera:
+- Nazwa techniki
+- Krótki opis
+- Przykład
+
+Techniki:
+- „Większość osób uważa…” (presja społeczna)
+- „Eksperci twierdzą…” (autorytet)
+- Strach („To może być niebezpieczne…”)
+- Emocje zamiast faktów
+- Wybiórcze informacje
+
+4. Sekcja: Jak się chronić (najważniejsza)
+Lista zasad:
+- Myśl krytycznie
+- Sprawdzaj źródła informacji
+- Nie ufaj nagłówkom
+- Zwracaj uwagę na emocje w przekazie
+- Porównuj różne źródła
+
+Każdy punkt jako osobna karta lub lista z ikonami
+
+5. Sekcja: Mini test
+- 1–2 pytania manipulacyjne
+- Po kliknięciu odpowiedzi pokaż komunikat:
+„To było pytanie manipulacyjne”
+
+6. Sekcja: Wniosek
+- Krótkie podsumowanie:
+„Manipulacja działa, ale można się przed nią bronić”
+
+Wymagania techniczne:
+- Animacje pojawiania się sekcji przy scrollowaniu (fade-in)
+- Hover effects na przyciskach
+- Płynne przewijanie
+- Estetyczny layout (zaokrąglone rogi, cienie, spacing)
+- Czytelna typografia
+
+Kod ma być kompletny (HTML + CSS + JS w jednym pliku) i gotowy do uruchomienia.
+
+
