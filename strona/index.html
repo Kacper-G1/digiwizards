@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak chronić się przed manipulacją | Świadomość i Obrona</title>
+    <meta name="description"
+        content="Poznaj techniki manipulacji i dowiedz się, jak skutecznie się przed nimi bronić. Edukacyjna strona o krytycznym myśleniu.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container fade-in">
+            <div class="hero-content">
+                <h1>Czy wiesz, jak łatwo można Cię zmanipulować?</h1>
+                <p>Każdego dnia jesteśmy bombardowani tysiącami komunikatów. Poznaj techniki manipulacji i naucz się
+                    przed nimi bronić, aby odzyskać kontrolę nad własnymi decyzjami.</p>
+                <div class="hero-buttons">
+                    <a href="ankieta.html" class="btn">Wypełnij ankietę</a>
+                    <a href="wnioski.html" class="btn btn-outline">Wnioski z ankiety</a>
+                    <a href="#test" class="btn btn-outline">Sprawdź się</a>
+                </div>
+            </div>
+
+            <div class="hero-graphic fade-in">
+                <div class="data-loop loop-1"></div>
+                <div class="data-loop loop-2"></div>
+                <div class="data-loop loop-3"></div>
+                <div class="data-loop loop-4"></div>
+
+
+                <div class="glass-shield">
+                    <i data-lucide="brain" class="brain-icon-hero"></i>
+                </div>
+
+                <div class="red-threat threat-1">KUP TERAZ!</div>
+                <div class="red-threat threat-2">ZAGROŻENIE!</div>
+                <div class="red-threat threat-3">STRACISZ!</div>
+                <div class="red-threat threat-4">EKSPERT OSTRZEGA!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Definition Section -->
+    <section id="czym-jest" class="definition">
+        <div class="container">
+            <div class="fade-in" style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="label" style="color: var(--primary);">Podstawy</span>
+                <h2>Czym jest manipulacja?</h2>
+                <p>To celowe działanie, którego celem jest zmiana zachowania lub przekonań innej osoby w sposób ukryty i
+                    często szkodliwy. Manipulator nie gra w otwarte karty – używa trików, byś myślał, że to Twoja własna
+                    decyzja.</p>
+            </div>
+
+            <div class="slider-wrapper fade-in">
+                <button class="slider-arrow arrow-left" onclick="prevSlide()"><i
+                        data-lucide="chevron-left"></i></button>
+                <button class="slider-arrow arrow-right" onclick="nextSlide()"><i
+                        data-lucide="chevron-right"></i></button>
+
+                <div class="slider-viewport">
+                    <div class="slider-track">
+                        <!-- Slide 1: Urgency -->
+                        <div class="slide">
+                            <div class="comparison">
+                                <div class="comp-card manipulative">
+                                    <span class="label" style="color: #ef4444;">Przekaz manipulacyjny (Presja
+                                        czasu)</span>
+                                    <p>"Tylko dzisiaj! Ostatnie sztuki! Jeśli nie kupisz teraz, stracisz jedyną szansę w
+                                        życiu!"</p>
+                                </div>
+                                <div class="comp-card neutral">
+                                    <span class="label" style="color: #10b981;">Przekaz neutralny</span>
+                                    <p>"Nasz produkt jest dostępny w promocji do końca dnia. Zapraszamy do zapoznania
+                                        się z ofertą."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Social Proof -->
+                        <div class="slide">
+                            <div class="comparison">
+                                <div class="comp-card manipulative">
+                                    <span class="label" style="color: #ef4444;">Przekaz manipulacyjny (Dowód
+                                        społeczny)</span>
+                                    <p>"Wszyscy Twoi znajomi już tam są. Nie pozwól, by myślano o Tobie jako o kimś, kto
+                                        boi się postępu. Dołącz do nas!"</p>
+                                </div>
+                                <div class="comp-card neutral">
+                                    <span class="label" style="color: #10b981;">Przekaz neutralny</span>
+                                    <p>"Wiele osób z Twojego otoczenia korzysta z tej platformy. Może zainteresują Cię
+                                        jej funkcje?"</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Fear Management -->
+                        <div class="slide">
+                            <div class="comparison">
+                                <div class="comp-card manipulative">
+                                    <span class="label" style="color: #ef4444;">Przekaz manipulacyjny (Zarządzanie
+                                        strachem)</span>
+                                    <p>"Twoje oszczędności są zagrożone! System bankowy może upaść w każdej chwili.
+                                        Przenieś środki natychmiast!"</p>
+                                </div>
+                                <div class="comp-card neutral">
+                                    <span class="label" style="color: #10b981;">Przekaz neutralny</span>
+                                    <p>"Zabezpiecz swoje finanse, dywersyfikując oszczędności. Zapoznaj się z
+                                        bezpiecznymi opcjami inwestycyjnymi."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Dots -->
+                    <div class="slider-dots">
+                        <div class="dot active" onclick="updateSlider(0)"></div>
+                        <div class="dot" onclick="updateSlider(1)"></div>
+                        <div class="dot" onclick="updateSlider(2)"></div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Techniques Section -->
+    <section id="techniki">
+        <div class="container">
+            <div class="fade-in" style="text-align: center; margin-bottom: 50px;">
+                <span class="label" style="color: var(--primary);">Arsenal manipulatora</span>
+                <h2>Mocne techniki i przykłady</h2>
+                <p>Dzisiejsza manipulacja jest subtelna, szybka i wykorzystuje nasze najgłębsze instynkty.</p>
+            </div>
+
+            <div class="techniques-grid">
+                <!-- Card 1 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="users"></i></div>
+                    <h3>Dowód społeczny (Presja większości)</h3>
+                    <p>Sugestia, że jesteś w mniejszości, która "nie rozumie" lub "zostaje w tyle". To uderza w
+                        pierwotny lęk przed wykluczeniem ze stada.</p>
+                    <div class="card-example">
+                        "Ponad 2 miliony Polaków już zabezpieczyło swoje oszczędności. Nie pozwól, by Twoja rodzina była
+                        jedyną, która straci wszystko."
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>Autorytet (Eksperckość)</h3>
+                    <p>Wykorzystanie tytułów naukowych, mundurów lub "oficjalnych raportów", by uśpić Twoją czujność i
+                        krytycyzm względem treści.</p>
+                    <div class="card-example">
+                        "Zgodnie z raportem instytutu Global Security, obecny system przestanie istnieć w ciągu 6
+                        miesięcy. Eksperci zalecają natychmiastowe działanie."
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="layout"></i></div>
+                    <h3>Framing (Efekt obramowania)</h3>
+                    <p>Przedstawianie tej samej informacji w różny sposób, by wywołać określone emocje. Skupienie uwagi
+                        na zyskach lub stratach.</p>
+                    <div class="card-example">
+                        "Ten zabieg ma 95% szans na powodzenie" brzmi lepiej niż "5 na 100 osób umiera podczas tego
+                        zabiegu", mimo że to ten sam fakt.
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="mouse-pointer-click"></i></div>
+                    <h3>Sugestia wyboru</h3>
+                    <p>Dawanie złudzenia kontroli poprzez ograniczony wybór, w którym jedna opcja jest celowo
+                        przedstawiona jako "lepsza" lub domyślna.</p>
+                    <div class="card-example">
+                        "Możesz wybrać pakiet Standard lub Premium (rekomendowany przez 90% użytkowników). Który
+                        wybierasz dla swojego bezpieczeństwa?"
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="quote"></i></div>
+                    <h3>Emocjonalne sformułowanie</h3>
+                    <p>Używanie słów nacechowanych (np. "skandal", "ratunek"), by ominąć logiczne myślenie i wywołać
+                        silną reakcję.</p>
+                    <div class="card-example">
+                        "To skandaliczny zamach na Twoją godność! Musimy walczyć o nasze wartości!"
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="megaphone"></i></div>
+                    <h3>Polaryzacja i Emocje</h3>
+                    <p>Dzielenie świata na "my" i "oni". Budowanie nienawiści lub pogardy do drugiej strony, by ułatwić
+                        sterowanie grupą.</p>
+                    <div class="card-example">
+                        "ONI chcą zniszczyć Twoją wolność. Tylko MY mamy odwagę powiedzieć DOŚĆ. Jesteś z nami czy
+                        przeciwko nam?"
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="flame"></i></div>
+                    <h3>Zarządzanie Strachem</h3>
+                    <p>Wprowadzanie w stan "walki lub ucieczki". Gdy się boisz, Twój mózg szuka szybkiego ratunku
+                        zamiast analizować fakty.</p>
+                    <div class="card-example">
+                        "Twoje dane wyciekły! Masz 15 minut na zmianę hasła przez ten link, inaczej hakerzy przejmą
+                        Twoje oszczędności."
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="card fade-in">
+                    <div class="card-icon"><i data-lucide="eye-off"></i></div>
+                    <h3>Półprawdy i Kontekst</h3>
+                    <p>Prezentowanie prawdziwych faktów w taki sposób, by prowadziły do fałszywych wniosków. Ukrywanie
+                        kosztów.</p>
+                    <div class="card-example">
+                        "Nasza aplikacja jest w 100% darmowa! (W regulaminie: 'Zgadzasz się na sprzedaż danych podmiotom
+                        trzecim')."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curiosities Section -->
+    <section class="definition" style="background-color: #f1f5f9;">
+        <div class="container">
+            <div class="fade-in" style="text-align: center; margin-bottom: 50px;">
+                <span class="label" style="color: var(--primary);">Czy wiesz, że...?</span>
+                <h2>Fakty, które zmieniają perspektywę</h2>
+            </div>
+
+            <div class="protection-list" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                <div class="card fade-in" style="background: white; border-radius: 24px; padding: 30px;">
+                    <h3 style="color: var(--primary);">Zasada 3 sekund czyli Technika 3-2-1</h3>
+                    <p>Manipulatorzy często starają się wymusić decyzję w ciągu pierwszych kilku sekund. Dlaczego?
+                        Ponieważ tyle czasu potrzebuje kora przedczołowa, by zacząć logicznie analizować sytuację.</p>
+                </div>
+                <div class="card fade-in" style="background: white; border-radius: 24px; padding: 30px;">
+                    <h3 style="color: var(--primary);">Efekt czystej ekspozycji</h3>
+                    <p>Mózg podświadomie ufa rzeczom, które widzi często. Nawet jeśli na początku coś Ci się nie
+                        podobało, po 20-tym wyświetleniu reklamy zaczniesz uznawać ten produkt za "bezpieczny wybór".
+                    </p>
+                </div>
+                <div class="card fade-in" style="background: white; border-radius: 24px; padding: 30px;">
+                    <h3 style="color: var(--primary);">Gaslighting 2.0</h3>
+                    <p>W 2026 roku najgroźniejszą formą manipulacji jest podważanie faktów przy pomocy AI. Gdy nie wiesz
+                        już, co jest prawdą, a co deepfakiem, stajesz się najbardziej podatny na sugestie "silnych
+                        liderów".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Protection Section -->
+    <section id="ochrona" class="protection">
+        <div class="container">
+            <div class="fade-in" style="text-align: center; margin-bottom: 50px;">
+                <span class="label" style="color: var(--primary);">Twoja tarcza</span>
+                <h2>Jak się bronić w 2026?</h2>
+                <p>Technologia idzie naprzód, ale mechanizmy psychologiczne pozostają te same.</p>
+            </div>
+
+            <div class="protection-list">
+                <div class="prot-item fade-in">
+                    <i data-lucide="brain" class="prot-icon"></i>
+                    <h3>Włącz "opóźnienie"</h3>
+                    <p>Nigdy nie podejmuj decyzji pod wpływem emocji. Daj sobie 10 minut – to wystarczy, by opadła
+                        adrenalina.</p>
+                </div>
+                <div class="prot-item fade-in">
+                    <i data-lucide="search" class="prot-icon"></i>
+                    <h3>Weryfikuj źródła AI</h3>
+                    <p>W świecie deepfake'ów sprawdzaj, czy dana osoba rzeczywiście to powiedziała w innych,
+                        niezależnych mediach.</p>
+                </div>
+                <div class="prot-item fade-in">
+                    <i data-lucide="eye-off" class="prot-icon"></i>
+                    <h3>Szukaj interesu</h3>
+                    <p>Zadaj pytanie: "Kto zarabia na tym, że ja się teraz tak czuję?"</p>
+                </div>
+                <div class="prot-item fade-in">
+                    <i data-lucide="activity" class="prot-icon"></i>
+                    <h3>Higiena cyfrowa</h3>
+                    <p>Świadome i odpowiedzialne korzystanie z technologii (internetu, ekranów), mające na celu
+                        ochronę
+                        zdrowia fizycznego, psychicznego i społecznego.</p>
+                </div>
+                <div class="prot-item fade-in">
+                    <i data-lucide="layers" class="prot-icon"></i>
+                    <h3>Odporność na bańki</h3>
+                    <p>Zauważaj, kiedy portal próbuje Cię przestraszyć "tymi drugimi". To zawsze jest czerwona flaga.
+                    </p>
+                </div>
+                <div class="prot-item fade-in">
+                    <i data-lucide="shield" class="prot-icon"></i>
+                    <h3>Zasada ograniczonego zaufania</h3>
+                    <p>Nie ufaj bezgranicznie "ekspertom" w internecie. Zawsze sprawdzaj, czy dana opinia jest poparta
+                        wiarygodnymi źródłami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Section -->
+    <section id="test" class="definition">
+        <div class="container">
+            <div class="fade-in" style="text-align: center;">
+                <span class="label" style="color: var(--primary);">Interakcja</span>
+                <h2>Test odporności na manipulację</h2>
+                <p>Jak zareagujesz na te komunikaty?</p>
+            </div>
+
+            <div class="test-box fade-in">
+                <div id="quiz-container">
+                    <!-- Dynamic question content -->
+                </div>
+                <button id="next-q" class="btn" style="margin-top: 32px; display: none;" onclick="handleNext()">Następne
+                    wyzwanie</button>
+
+                <div id="quiz-result" style="display: none; margin-top: 32px;">
+                    <h3>Twój wynik odporności: <span id="score-val">0</span>/6</h3>
+                    <p id="score-text"></p>
+                    <button class="btn" onclick="resetQuiz()" style="margin-top: 16px;">Spróbuj ponownie</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer style="padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.875rem;">
+        <p>&copy; 2026 Kacper Gałuszka. Projekt edukacyjny wykonany w ramach konkursu Digital Wizards</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
